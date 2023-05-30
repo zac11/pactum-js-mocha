@@ -4,8 +4,11 @@
   "description": "Pactum Tests with Mocha and Mochawesome reporter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./reqres-api/*.js",
-    "test-reports": "mocha ./reqres-api/*.js --reporter spec --reporter mochawesome --timeout 5000"
+    "test": "mocha ./tests/reqres-api/*.js",
+    "test-new": "mocha ./automation-excercise/*.js",
+    "test-all": "mocha ./tests/**/*.js",
+    "test-reports": "mocha ./reqres-api/*.js --reporter spec --reporter mochawesome --timeout 5000",
+    "test-new-reports": "mocha ./automation-excercise/*.js --reporter spec --reporter mochawesome --timeout 5000"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +20,9 @@
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
     "pactum": "^3.4.1"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "find-config": "^1.0.0"
   }
 }
