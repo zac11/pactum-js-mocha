@@ -7,9 +7,3 @@ services:
       context: .
       dockerfile: Dockerfile
   
-  pactum-new:
-    container_name: pactum-new-tests
-    build: 
-      context: .
-      dockerfile: Dockerfile.new
-  
