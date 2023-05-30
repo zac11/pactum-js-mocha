@@ -34,4 +34,3 @@ jobs:
         with:
           name: pactum_reports
           path: mochawesome-report/
-s
