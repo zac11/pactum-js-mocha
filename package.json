@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha ./tests/reqres-api/*.js",
     "test-new": "mocha ./automation-excercise/*.js",
+    "test-fuzz": "mocha ./fuzz/*.js",
     "test-all": "mocha ./tests/**/*.js",
     "test-reports": "mocha ./tests/reqres-api/*.js --reporter spec --reporter mochawesome --timeout 5000",
     "test-new-reports": "mocha ./automation-excercise/*.js --reporter spec --reporter mochawesome --timeout 5000"
