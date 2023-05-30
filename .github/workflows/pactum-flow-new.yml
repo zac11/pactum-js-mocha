@@ -26,7 +26,7 @@ jobs:
         run: docker-compose -f docker-compose.new.yml build
 
       - name: Run the tests
-        run: docker-compose -f docker-compose.new.yml run --abort-on-container-exit --exit-code-from pactum-new 
+        run: docker-compose -f docker-compose.new.yml up --abort-on-container-exit --exit-code-from pactum-new 
 
       - if: always()
         name: Upload the e2e test results
