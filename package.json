@@ -4,7 +4,8 @@
   "description": "Pactum Tests with Mocha and Mochawesome reporter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./reqres-api/*.js"
+    "test": "mocha ./reqres-api/*.js",
+    "test-reports": "mocha ./reqres-api/*.js --reporter spec --reporter mochawesome --timeout 5000"
   },
   "keywords": [],
   "author": "",

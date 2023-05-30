@@ -1,0 +1,39 @@
+
+
+name: Deploy pactum-tests github actions
+
+# Controls when the workflow will run
+on:
+
+  workflow_dispatch:
+  # Triggers the workflow on push or pull request events 
+  push:
+    branches:
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "deploy_pactum_tests"
+  deploy_pactum_tests:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Pull images for Docker
+        run: docker-compose -f docker-compose.local.yml pull
+
+      - name: Build docker images
+        run: docker-compose -f docker-compose.local.yml build
+
+      - name: Run the tests
+        run: docker-compose -f docker-compose.local.yml up --abort-on-container-exit --exit-code-from pactum
+
+      - if: always()
+        name: Upload the e2e test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: pactum_reports
+          path: mochawesome-report/
+s
